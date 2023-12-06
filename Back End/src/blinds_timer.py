@@ -1,6 +1,17 @@
 import time as t
 from timer import Timer, clear_screen
-    
+
+def start(small_blind, round_length):
+        big_blind = small_blind*2
+        now = t.time()
+        return({
+             "small_blind": small_blind,
+             "big_blind": big_blind,
+             "round_length": round_length*60,
+             "timestamp": now
+        })
+
+
 if __name__ == '__main__':
     reenter = 1
     #Get User Inputs
