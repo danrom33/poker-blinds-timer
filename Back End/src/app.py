@@ -14,5 +14,9 @@ def data_entered(small_blind, round_minutes):
     data = start(small_blind, round_minutes)
     return jsonify(data)
 
+@app.route("/newround")
+def change_round():
+    return new_round()
+
 if __name__ == '__main__':
     app.run(debug=True)
