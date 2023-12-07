@@ -23,5 +23,13 @@ def data_entered(value_small_blind, value_round_minutes):
 def change_round():
     return new_round()
 
+@app.route("/edit/<value_edit>")
+def edit_length(value_edit):
+    try:
+        new_length = float(value_edit)
+        return edit(new_length)
+    except InvalidInputError as e:
+        return jsonify({"Error": str(e)})
+
 if __name__ == '__main__':
     app.run(debug=True)

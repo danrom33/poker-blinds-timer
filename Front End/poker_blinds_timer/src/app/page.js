@@ -33,10 +33,11 @@ export default function Home() {
     setStart(false)
   }
 
+
   return (
     <div className="app-container"> {/* Added a class name */}
       {start ? (
-        <Game roundInfo={roundData} onError={handleError} onEnd={endGame}/>
+        <Game roundInfo={roundData} onEnd={endGame} onError={handleError}/>
       ) : (
         <Start onGameStart={handleGameStart} onError={handleError}/>
       )}

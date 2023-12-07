@@ -33,7 +33,7 @@ h1{
     padding: 10px;
     margin-bottom: 16px;
     box-sizing: border-box;
-    border: 1px solid #ddd; /* Light gray border */
+    border: 3px solid #ddd; /* Light gray border */
     border-radius: 4px;
     transition: border-color 0.3s; /* Smooth transition for border color */
   
@@ -70,6 +70,11 @@ h1{
   .game-screen {
     position: relative;
   }
+
+  .round-info {
+    font-size: 15px;
+    margin: 5px;
+  }
   
   .game-buttons {
     display: flex;
@@ -86,6 +91,7 @@ h1{
     cursor: pointer;
     flex-grow: 1;
     margin-right: 10px;
+    margin-top: 20px;
   }
   
   .game-buttons button:last-child {
@@ -98,7 +104,7 @@ h1{
   
   .countdown-container {
     position: absolute;
-    bottom: 20px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;

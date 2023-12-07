@@ -43,4 +43,9 @@ def new_round():
             "roundNumber": round
      })
 
-
+def edit(new_value):
+     global round_time
+     if not isinstance(new_value, (int, float)) or new_value <= 0:
+            raise InvalidInputError("Round length must be a positive number.")
+     round_time = new_value*60
+     return "Success"
