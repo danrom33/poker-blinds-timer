@@ -1,6 +1,38 @@
 import time as t
 from timer import Timer, clear_screen
-    
+
+curr_small = 0
+curr_big = 0
+round = -1
+round_time = -1
+
+def start(small_blind, round_length):
+        global curr_small, curr_big, round, round_time
+        big_blind = small_blind*2
+        curr_small = small_blind
+        curr_big = big_blind
+        round = 1
+        round_time = round_length*60
+        return({
+             "smallBlind": small_blind,
+             "bigBlind": big_blind,
+             "roundLength": round_time,
+             "roundNumber" : round
+        })
+
+def new_round():
+     global round, curr_small, curr_big, round_time
+     round += 1
+     curr_small *= 2
+     curr_big *= 2
+     return({
+            "smallBlind": curr_small,
+            "bigBlind": curr_big,
+            "roundLength": round_time,
+            "roundNumber": round
+     })
+
+
 if __name__ == '__main__':
     reenter = 1
     #Get User Inputs
