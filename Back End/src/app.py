@@ -9,10 +9,15 @@ CORS(app)
 def hello_world():
     return "Hello World"
 
-@app.route("/start/small/<int:small_blind>/length/<int:round_minutes>")
-def data_entered(small_blind, round_minutes):
-    data = start(small_blind, round_minutes)
-    return jsonify(data)
+@app.route("/start/small/<value_small_blind>/length/<value_round_minutes>")
+def data_entered(value_small_blind, value_round_minutes):
+    try:
+        small_blind = float(value_small_blind)
+        round_minutes = float(value_round_minutes)
+        data = start(small_blind, round_minutes)
+        return jsonify(data)
+    except InvalidInputError as e:
+        return jsonify({"Error": str(e)})
 
 @app.route("/newround")
 def change_round():

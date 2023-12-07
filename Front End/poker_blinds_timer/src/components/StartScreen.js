@@ -29,7 +29,11 @@ export default function Start({ onGameStart, onError}) {
           roundLength
       )
       .then((response) => {
-        onGameStart(response.data);
+        if(response.data["Error"]){
+          onError(response.data["Error"])
+        }
+        else
+          onGameStart(response.data);
       })
       .catch((error) => {
         var err_message = ''
