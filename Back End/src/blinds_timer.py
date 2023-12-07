@@ -1,5 +1,6 @@
 import time as t
 from timer import Timer, clear_screen
+import winsound
 
 curr_small = 0
 curr_big = 0
@@ -22,6 +23,9 @@ def start(small_blind, round_length):
 
 def new_round():
      global round, curr_small, curr_big, round_time
+     freq = 1000
+     duration = 1000
+     winsound.Beep(frequency=freq, duration=duration)
      round += 1
      curr_small *= 2
      curr_big *= 2
